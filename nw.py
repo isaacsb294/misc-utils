@@ -34,9 +34,10 @@ def main(filename: str, extension: str):
 if __name__ == "__main__":
     import sys
     import os
+    import html
 
-    filename = sys.argv[1]
-    extension = sys.argv[2]
+    filename = html.escape(sys.argv[1])
+    extension = html.escape(sys.argv[2])
 
     main(filename, extension)
     os.system(f"nvim {filename}.{extension}")
